@@ -1,10 +1,8 @@
 import json
-import time
-import requests
 from flask import Flask, jsonify
 from skywalking import agent, config
 
-svc_name = "py-store-svc"
+svc_name = "flask-store-svc"
 
 config.init(service_name=svc_name)
 agent.start()

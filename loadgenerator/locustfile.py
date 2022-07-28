@@ -2,7 +2,7 @@ from locust import HttpUser, TaskSet, between
 
 
 def fulltest(l):
-    l.client.get("http://python-micro-ui:5000/app/testall")
+    l.client.get("/app/testall")
 
 
 class UserBehavior(TaskSet):

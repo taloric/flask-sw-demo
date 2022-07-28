@@ -4,7 +4,7 @@ import requests
 from flask import Flask, jsonify
 from skywalking import agent, config
 
-svc_name = "py-shop-svc"
+svc_name = "flask-shop-svc"
 
 config.init(service_name=svc_name)
 agent.start()
@@ -40,7 +40,7 @@ def shopdetail(name):
 
 @app.route('/shop/store/detail/<name>')
 def shopstore(name):
-    r = requests.get('http://py-store-svc:5000/store/detail/'+name)
+    r = requests.get('http://flask-store-svc:5000/store/detail/'+name)
     return r.json()
 
 app.run(host="0.0.0.0", debug=Flask)
